@@ -1,10 +1,15 @@
+var HtmlWebPackPlugin = require('html-webpack-plugin')
+
 module.exports = {
     mode: 'development',
     entry: './index.js',
     output: {
-        filename: 'main.js',
+        filename: 'main-[contentHash].js',
         publicPath: 'dist'
     },
+    plugins: [new HtmlWebPackPlugin({
+        template: './index.htm'
+    })],
     module: {
         rules: [{
             test: /\.js$/,
