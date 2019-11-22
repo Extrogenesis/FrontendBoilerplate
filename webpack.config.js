@@ -1,4 +1,5 @@
-var HtmlWebPackPlugin = require('html-webpack-plugin')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -7,8 +8,9 @@ module.exports = {
         filename: 'main-[contentHash].js',
         publicPath: 'dist'
     },
-    plugins: [new HtmlWebPackPlugin({
-        template: './src/index.htm'
+    plugins: [new CleanWebpackPlugin(), 
+            new HtmlWebPackPlugin({
+                template: './src/index.htm'
     })],
     module: {
         rules: [{
