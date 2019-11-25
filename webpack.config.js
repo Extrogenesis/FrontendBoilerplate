@@ -5,8 +5,7 @@ module.exports = {
     mode: 'development',
     entry: './src/index.js',
     output: {
-        filename: 'main-[contentHash].js',
-        publicPath: 'dist'
+        filename: 'main-[contentHash].js'
     },
     plugins: [new CleanWebpackPlugin(), 
             new HtmlWebPackPlugin({
